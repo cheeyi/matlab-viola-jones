@@ -1,0 +1,25 @@
+# Viola-Jones Face Detection for Matlab
+### A CSCi 5561 Spring 2015 Semester Project
+
+Authors: Chee Yi Ong, Stephen Peyton
+
+### Introduction
+
+This is a slightly modified Viola-Jones face detection algorithm built using Matlab.
+
+### Assumptions
+
+ 1. Frontal-facing images ONLY.
+ 2. Background is not cluttered. Solid-colored background works the best.
+ 3. Tilting of the head is at a minimum.
+ 4. Image size is approximately 300x400 or similar. Individual features are a minimum of 
+  19x19, because that is the smallest size of a single Haar feature or classifier.
+  5. One face-of-interest per image.
+
+This folder contains two subfolders: `trainHaar` and `detectFaces`. `trainHaar` consists of the training algorithm which trains classifiers using Haar-like features, while `detectFaces` uses the trained classifiers to detect faces.
+
+The `main` functions for both parts of the face detection routine are named identically to the folder containing the code, i.e., `trainHaar.m` for the training part, and `detectFaces.m` for the detection part.
+ 
+ Instructions:
+ 1. Training: simply start the training by running the script `trainHaar` on the command line. Note that this takes _approximately 21 hours_ on a 2.6GHz quad-core i7.
+ 2. Detection: `detectFaces('image.jpg')` or `detectFaces('someDirectory/image.jpg')`.
